@@ -6,8 +6,13 @@ import Proyectos.SistemaPedidos.app.service.OrderService;
 import Proyectos.SistemaPedidos.app.service.ProductService;
 
 public class OrderController {
-    private OrderService orderService = new  OrderService();
-    private ProductService productService = new  ProductService();
+    private OrderService orderService;
+    private ProductService productService;
+
+    public OrderController(OrderService orderService, ProductService productService) {
+        this.orderService = orderService;
+        this.productService = productService;
+    }
 
     public void createProduct(String name, double price){
         try {

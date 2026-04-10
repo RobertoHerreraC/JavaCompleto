@@ -10,8 +10,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class OrderService {
-    private OrderRepository orderRepository = new OrderRepository();
-    private ProductService productService = new ProductService();
+    private OrderRepository orderRepository;
+    private ProductService productService;
+
+    public OrderService(OrderRepository orderRepository, ProductService productService) {
+        this.orderRepository = orderRepository;
+        this.productService = productService;
+    }
 
     public Order createOrder(){
         return orderRepository.save(new Order(null));

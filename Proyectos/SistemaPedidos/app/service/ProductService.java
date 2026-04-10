@@ -5,7 +5,11 @@ import Proyectos.SistemaPedidos.app.model.Product;
 import Proyectos.SistemaPedidos.app.repository.ProductRepository;
 
 public class ProductService {
-    private ProductRepository repository = new  ProductRepository();
+    private ProductRepository repository;
+
+    public ProductService(ProductRepository repository) {
+        this.repository = repository;
+    }
 
     public Product save(ProductDTO dto){
         if(dto.price<=0) throw new RuntimeException("Precio invalido");
