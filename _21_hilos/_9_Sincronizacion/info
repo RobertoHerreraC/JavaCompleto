@@ -1,0 +1,4 @@
+Sincronización: sirve para proteger recursos compartidos cuando varios _21_hilos acceden al mismo dato al mismo tiempo.
+El problema principal se llama: Race Condition(Ocurre cuando varios _21_hilos acceden/modifican el mismo recurso y el resultado depende del orden de ejecución.)
+
+Locks: Los Lock dan más control que synchronized.

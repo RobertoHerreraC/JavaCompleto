@@ -1,0 +1,15 @@
+Future<T> representa el resultado futuro de una tarea que se está ejecutando de forma concurrente.
+Future<T> = promesa de que más adelante tendré un resultado de tipo T
+¿Para qué sirve?
+Cuando envías una tarea con ExecutorService, la tarea no necesariamente termina de inmediato.
+te permite:
+esperar el resultado
+saber si terminó
+cancelar la tarea
+manejar errores
+obtener el valor calculado
+
+get() es blocking
+isDone() Indica si la tarea ya terminó.
+cancel(...) Intenta cancelar la tarea.
+isCancelled() Indica si fue cancelada.

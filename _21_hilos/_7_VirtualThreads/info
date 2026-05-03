@@ -1,0 +1,37 @@
+Los Virtual Threads son _21_hilos livianos introducidos por Project Loom para manejar muchísimas tareas concurrentes con bajo costo.
+Con virtual threads, puedes manejar muchísimas tareas bloqueantes de forma más simple.
+Java 21 → oficial y estable
+
+
+newVirtualThreadPerTaskExecutor(): Este executor crea un virtual thread por cada tarea.
+
+Los virtual threads son ideales para tareas I/O-bound:
+APIs REST
+llamadas HTTP
+acceso a base de datos
+lectura/escritura de archivos
+tareas que esperan mucho
+
+No son especialmente útiles para tareas CPU-bound pesadas como:
+cálculos matemáticos intensos
+procesamiento de imágenes
+compresión pesada
+algoritmos paralelos intensivos
+Para eso suele tener más sentido:
+ForkJoinPool
+parallel _17_streams
+pools limitados por CPU
+
+Virtual Threads → muchas tareas bloqueantes
+ForkJoinPool → dividir cálculo pesado
+ExecutorService clásico → control tradicional de pools
+
+
+¿Reemplazan CompletableFuture?
+No siempre. Virtual threads hacen que puedas escribir código bloqueante normal de forma más escalable.
+
+Antes:
+CompletableFuture.supplyAsync(...)
+Ahora muchas veces puedes escribir:
+String respuesta = llamarServicio();
+dentro de un virtual thread, sin complicar tanto el flujo.

@@ -1,0 +1,28 @@
+ForkJoinPool es una herramienta de concurrencia pensada para paralelismo usando la estrategia.
+problema grande
+→ dividir en problemas pequeños
+→ resolver en paralelo
+→ combinar resultados
+
+Ejemplos:
+sumar millones de números
+procesar grandes colecciones
+buscar valores en estructuras grandes
+cálculos paralelos
+algoritmos recursivos
+procesamiento CPU-bound
+
+fork() Lanza una subtarea para que pueda ejecutarse en paralelo.
+join() Espera el resultado de una subtarea.
+
+ForkJoinPool: El pool que ejecuta tareas.
+RecursiveTask<T>: Tarea que retorna valor.
+RecursiveAction: Tarea que no retorna valor.
+
+| Concepto   | ExecutorService                | ForkJoinPool                 |
+| ---------- | ------------------------------ | ---------------------------- |
+| Enfoque    | ejecutar tareas independientes | dividir tareas grandes       |
+| Ideal para | tareas concurrentes generales  | algoritmos paralelos         |
+| Modelo     | submit/get                     | fork/join                    |
+| Uso típico | HTTP, BD, procesos             | cálculo, colecciones grandes |
+

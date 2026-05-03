@@ -1,0 +1,16 @@
+Structured Concurrency sirve para manejar varias tareas concurrentes como si fueran una sola unidad de trabajo.
+La tarea principal no debería seguir hasta que sus subtareas estén controladas: terminadas, fallidas o canceladas.
+
+Estado actual
+StructuredTaskScope sigue siendo una preview API en Java moderno. En Java 21 apareció como preview,
+y OpenJDK indica que continúa como preview en Java 26 mediante JEP 525. Para usarlo necesitas compilar/ejecutar con --enable-preview.
+
+fork()  → lanza subtarea
+join()  → espera subtareas
+throwIfFailed() → si alguna falló, propaga error
+get()   → obtiene resultado
+
+ShutdownOnFailure: Si una subtarea falla, cancela las demás. Ideal cuando necesitas que todas funcionen.
+ShutdownOnSuccess: Si una subtarea tiene éxito, cancela las demás. Ideal cuando necesitas la primera respuesta válida.
+
+AUN ES PREVIEW EN JAVA25

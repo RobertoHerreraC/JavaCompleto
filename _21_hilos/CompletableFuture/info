@@ -1,0 +1,24 @@
+CompletableFuture es una API de Java para trabajar con tareas asíncronas de forma más flexible que Future.( pipeline async de tareas)
+
+CompletableFuture permite:
+ejecutar tareas async
+encadenar pasos
+transformar resultados
+combinar tareas independientes
+manejar errores
+evitar bloquear innecesariamente
+
+async: Significa que una tarea puede ejecutarse en otro hilo, sin bloquear inmediatamente el hilo actual.
+thenApply: Transforma un resultado y devuelve otro.
+thenAccept: Consume un resultado, pero no devuelve otro valor.
+thenCombine: Combina dos CompletableFuture independientes.
+thenRun: Ejecuta algo después, pero no recibe el resultado anterior.
+exceptionally: Maneja errores y devuelve un valor alternativo.
+handle: Maneja tanto éxito como error.
+allOf: Espera a que varias tareas terminen.
+anyOf: Termina cuando cualquiera de las tareas termina primero.
+
+runAsync(): Cuando la tarea no retorna valor.
+supplyAsync(): Cuando la tarea sí retorna valor.
+
+Por defecto, CompletableFuture usa el ForkJoinPool.commonPool(). Pero puedes pasar tu propio executor.
