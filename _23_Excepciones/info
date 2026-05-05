@@ -1,0 +1,13 @@
+Exception: representa errores que una aplicación podría manejar.
+RuntimeException: representa errores que no estás obligado a capturar. En backend moderno se usa mucho para errores de lógica:
+
+Checked Exception: Son excepciones que Java te obliga a manejar con:
+try-catch o throws
+
+Unchecked Exception: No estás obligado a capturarlas.
+
+Buen diseño en backend moderno
+En backend moderno normalmente:
+usar RuntimeException para lógica de negocio
+evitar checked innecesarias
+centralizar manejo de errores

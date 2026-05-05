@@ -1,0 +1,38 @@
+Path: representa una ruta de archivo o directorio.
+Files: es una clase utilitaria con muchos métodos estáticos para trabajar con archivos.
+
+Files.readString: Útil para archivos pequeños o medianos.
+Charset: define la codificación de caracteres.
+BufferedReader: sirve para leer texto de forma eficiente, especialmente línea por línea.
+Ideal para archivos grandes donde no quieres cargar todo en memoria.
+
+| Caso                 | Recomendación        |
+| -------------------- | -------------------- |
+| Archivo pequeño      | `Files.readString()` |
+| Archivo grande       | `BufferedReader`     |
+| Leer línea por línea | `BufferedReader`     |
+| Procesamiento batch  | `BufferedReader`     |
+
+
+| Caso          | Recomendación         |
+| ------------- | --------------------- |
+| Texto pequeño | `Files.writeString()` |
+| Muchas líneas | `BufferedWriter`      |
+| Reportes      | `BufferedWriter`      |
+| Exportar CSV  | `BufferedWriter`      |
+
+StandardOpenOption: Sirve para controlar cómo se abre un archivo.
+FileChannel: pertenece a NIO y se usa para operaciones de bajo nivel con archivos, normalmente trabajando con bytes.
+
+Regla profesional
+Para archivos modernos en Java:
+Path + Files + UTF_8 + try-with-resources
+
+Para batch grande:
+BufferedReader + procesamiento línea por línea
+
+Para reportes:
+BufferedWriter
+
+Para binarios/grandes transferencias:
+FileChannel
