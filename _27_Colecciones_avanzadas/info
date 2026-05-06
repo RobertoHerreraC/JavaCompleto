@@ -1,0 +1,35 @@
+| Operación             | Estructura ideal    |
+| --------------------- | ------------------- |
+| Buscar por índice     | `List`              |
+| Evitar duplicados     | `Set`               |
+| Buscar por clave      | `Map`               |
+| Acceso O(1) por clave | `HashMap`           |
+| Concurrencia          | `ConcurrentHashMap` |
+
+ArrayList
+    listas simples
+    orden importante
+    lectura frecuente
+
+HashSet
+    eliminar duplicados
+    búsquedas rápidas
+
+HashMap
+    lookup por clave
+    rendimiento O(1)
+
+ConcurrentHashMap
+    concurrencia
+    multithreading
+
+List.of()
+    datos constantes
+    configuración
+    DTOs
+
+Si necesitas búsqueda rápida → Map
+Si necesitas evitar duplicados → Set
+Si necesitas orden → List
+Si hay concurrencia → ConcurrentHashMap
+Si no quieres mutabilidad → List.of()
