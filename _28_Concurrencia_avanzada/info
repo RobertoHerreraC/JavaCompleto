@@ -1,0 +1,9 @@
+| Herramienta              | Resuelve                          |
+| ------------------------ | --------------------------------- |
+| `ConcurrentHashMap`      | Map concurrente                   |
+| `AtomicInteger`          | contador atómico                  |
+| `volatile`               | visibilidad                       |
+| `ThreadLocal`            | dato separado por hilo            |
+| `Semaphore`              | limitar acceso concurrente        |
+| `CountDownLatch`         | esperar varias tareas             |
+| `ReentrantReadWriteLock` | muchas lecturas, pocas escrituras |
